@@ -1,0 +1,18 @@
+{
+  "id": "KB-017",
+  "title": "Setting Up SSO with SAML for CloudDash",
+  "category": "account",
+  "tags": [
+    "SSO",
+    "SAML",
+    "single sign-on",
+    "identity provider",
+    "Okta",
+    "Azure AD"
+  ],
+  "content": "CloudDash supports Single Sign-On (SSO) via SAML 2.0, allowing your team to log in using your organization's identity provider (IdP). SSO is available on Enterprise plans only.\n\nSupported identity providers: Okta, Azure Active Directory, Google Workspace, OneLogin, JumpCloud, and any SAML 2.0-compliant IdP.\n\nSetup overview:\nSSO setup requires configuration on both your identity provider and in CloudDash. The process takes approximately 20-30 minutes.\n\nStep 1 \u2014 Get CloudDash SAML metadata:\n1. Go to Settings > Security > Single Sign-On\n2. Click Configure SSO\n3. Download the CloudDash Service Provider metadata XML, or note the following values:\n   - Entity ID: https://auth.clouddash.io/saml/metadata\n   - ACS URL: https://auth.clouddash.io/saml/callback\n   - Single Logout URL: https://auth.clouddash.io/saml/logout\n\nStep 2 \u2014 Configure your identity provider:\nIn your IdP, create a new SAML application for CloudDash using the values from Step 1. Configure the following attribute mappings:\n- email (required): User's email address\n- firstName (required): User's first name\n- lastName (required): User's last name\n- role (optional): CloudDash role (viewer, editor, or admin)\n\nStep 3 \u2014 Configure CloudDash with your IdP metadata:\n1. In CloudDash, go to Settings > Security > Single Sign-On\n2. Upload your IdP metadata XML or enter the IdP metadata URL\n3. Click Verify Configuration \u2014 CloudDash will test the SAML connection\n4. Once verified, click Enable SSO\n\nStep 4 \u2014 Test SSO before enforcing it:\nAfter enabling SSO, it is optional by default. Test that your team can log in via SSO before enforcing it. To enforce SSO (preventing password-based login):\nGo to Settings > Security > Single Sign-On > Enforce SSO and toggle it on.\n\nTroubleshooting SSO issues:\n- SAML assertion validation failed: Check that your IdP clock is synchronized (NTP) and that the assertion expiry is at least 5 minutes\n- User not provisioned: Ensure the user's email in the IdP matches their CloudDash account email\n- Redirect loop: Clear browser cookies and try again in an incognito window\nFor further SSO troubleshooting, contact support with your SAML assertion (available in browser developer tools during a failed login attempt).",
+  "last_updated": "2026-05-12",
+  "applies_to": [
+    "Enterprise"
+  ]
+}

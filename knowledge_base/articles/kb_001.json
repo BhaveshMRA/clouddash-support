@@ -1,0 +1,19 @@
+{
+  "id": "KB-001",
+  "title": "What Cloud Providers Does CloudDash Support?",
+  "category": "faq",
+  "tags": [
+    "cloud providers",
+    "AWS",
+    "GCP",
+    "Azure",
+    "integrations"
+  ],
+  "content": "CloudDash supports all three major cloud providers: Amazon Web Services (AWS), Google Cloud Platform (GCP), and Microsoft Azure. Each integration provides real-time monitoring, alerting, and cost optimization capabilities.\n\nAWS Integration: CloudDash connects to AWS via CloudWatch metrics, CloudTrail logs, and Cost Explorer APIs. Supported services include EC2, RDS, Lambda, S3, ECS, EKS, and over 150 additional AWS services. Authentication is handled via IAM roles (recommended) or access key pairs.\n\nGCP Integration: CloudDash integrates with Google Cloud Monitoring (formerly Stackdriver), Cloud Logging, and the Cloud Billing API. Supported services include Compute Engine, Cloud Run, GKE, Cloud SQL, and BigQuery. Authentication uses service account JSON keys or Workload Identity Federation.\n\nAzure Integration: CloudDash connects to Azure Monitor, Azure Cost Management, and the Azure Resource Manager API. Supported services include Virtual Machines, AKS, Azure Functions, SQL Database, and Blob Storage. Authentication uses service principals with client secret or certificate-based credentials.\n\nMulti-cloud support: CloudDash can monitor resources across all three providers simultaneously in a single dashboard. Cross-cloud cost comparison and unified alerting are available on Pro and Enterprise plans.\n\nTo add a new cloud provider integration, navigate to Settings > Integrations > Add Integration and follow the provider-specific setup wizard. Setup typically takes 5-10 minutes per provider.",
+  "last_updated": "2026-04-15",
+  "applies_to": [
+    "Free",
+    "Pro",
+    "Enterprise"
+  ]
+}

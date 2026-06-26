@@ -1,0 +1,19 @@
+{
+  "id": "KB-012",
+  "title": "How to Update Billing Information and Payment Method",
+  "category": "billing",
+  "tags": [
+    "payment method",
+    "credit card",
+    "billing address",
+    "update",
+    "payment failure"
+  ],
+  "content": "Keeping your billing information up to date ensures uninterrupted access to CloudDash. This guide covers how to update your payment method, billing address, and billing contact.\n\nUpdating your credit card:\n1. Go to Settings > Billing > Payment Methods\n2. Click Add Payment Method\n3. Enter your new card details\n4. Click Set as Default to make it the primary payment method\n5. Optionally remove the old card by clicking the trash icon next to it\n\nUpdating your billing address:\n1. Go to Settings > Billing > Billing Information\n2. Click Edit next to the billing address\n3. Update your address and click Save\nNote: Changing your billing address may affect applicable tax calculations starting from your next invoice.\n\nUpdating the billing contact email:\nThe billing contact receives all invoices and payment receipts. To change it:\n1. Go to Settings > Billing > Billing Information\n2. Click Edit next to the billing contact\n3. Enter the new email address and click Save\n\nWhat happens when a payment fails:\nIf a payment fails, CloudDash automatically retries the charge 3 times over 7 days (on days 1, 3, and 7 after the initial failure). You will receive an email notification after each failed attempt with a link to update your payment method.\n\nIf payment is not resolved within 7 days of the initial failure:\n- Free plan features remain accessible\n- Pro/Enterprise features are suspended (dashboards become read-only, alerts are paused)\n- After 14 days with no payment, the account is downgraded to the Free plan and data older than 7 days is archived\n\nTo restore access after a payment failure, update your payment method and the outstanding balance is charged immediately.",
+  "last_updated": "2026-04-30",
+  "applies_to": [
+    "Free",
+    "Pro",
+    "Enterprise"
+  ]
+}

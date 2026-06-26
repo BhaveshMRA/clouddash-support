@@ -1,0 +1,19 @@
+{
+  "id": "KB-009",
+  "title": "Understanding Your CloudDash Invoice",
+  "category": "billing",
+  "tags": [
+    "invoice",
+    "billing",
+    "charges",
+    "statement",
+    "receipt"
+  ],
+  "content": "Your CloudDash invoice is generated on the first day of each month and covers usage for the previous billing cycle. This guide explains each line item you may see on your invoice.\n\nInvoice sections:\n\nBase subscription fee: The flat monthly or annual fee for your current plan (Free, Pro, or Enterprise). For annual plans, this reflects the monthly equivalent already paid upfront.\n\nOverage charges (Pro plan): Pro plan includes up to 10 cloud accounts and 10,000 API requests per day. If you exceed these limits, overage charges apply:\n- Additional cloud accounts: $15/account/month\n- Additional API requests: $0.001 per request above the daily limit\n\nSeat charges (Enterprise plan): Enterprise plan billing includes a per-seat component for team members above the included base seats. Your contract specifies the included seat count and the per-seat overage rate.\n\nTaxes: Applicable sales tax, VAT, or GST is applied based on your billing address. US customers in states with SaaS software tax obligations will see state tax applied. EU customers will see VAT applied unless a valid VAT number is provided in Settings > Billing > Tax Information.\n\nHow to access your invoices:\n1. Go to Settings > Billing > Invoice History\n2. Click any invoice to view or download it as a PDF\n3. Invoices are also emailed to the billing contact email address on file\n\nPayment methods accepted: Credit card (Visa, Mastercard, Amex, Discover), ACH bank transfer (US only, Enterprise plans), and wire transfer (Enterprise plans, minimum $5,000/year).\n\nIf you believe there is an error on your invoice, contact billing support within 30 days of the invoice date. See KB-011 for the dispute and refund process.",
+  "last_updated": "2026-05-01",
+  "applies_to": [
+    "Free",
+    "Pro",
+    "Enterprise"
+  ]
+}

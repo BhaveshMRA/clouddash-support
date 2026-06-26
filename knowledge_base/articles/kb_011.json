@@ -1,0 +1,19 @@
+{
+  "id": "KB-011",
+  "title": "Refund Policy and How to Request a Refund",
+  "category": "billing",
+  "tags": [
+    "refund",
+    "billing dispute",
+    "charge",
+    "money back",
+    "policy"
+  ],
+  "content": "CloudDash's refund policy is designed to be fair and transparent. This article explains when refunds are available and how to request one.\n\nRefund eligibility:\n\n30-day money-back guarantee (new subscriptions only): If you are a new CloudDash customer and are not satisfied within the first 30 days of your first paid subscription, you are eligible for a full refund. This applies to your first Pro or Enterprise subscription only and cannot be used for plan renewals.\n\nBilling errors: If you were charged incorrectly due to a CloudDash error (for example, charged twice, charged the wrong amount, or charged after cancellation), you are eligible for a full refund of the erroneous charge regardless of when it occurred. Billing error refunds are processed within 3-5 business days.\n\nAnnual plan cancellations: If you cancel an annual plan, you are eligible for a prorated refund for the remaining full months of your subscription (partial months are not refunded). For example, if you cancel 4 months into a 12-month annual plan, you receive a refund for 8 months.\n\nRefunds not available: Monthly plan cancellations do not receive refunds for the current month. Downgrades do not receive refunds for unused days on the higher plan.\n\nHow to request a refund:\n1. Go to Settings > Billing > Invoice History\n2. Find the invoice you want to dispute\n3. Click Request Refund next to the invoice\n4. Select the reason and provide any additional details\n5. Submit the request\n\nAlternatively, email billing@clouddash.io with your account email, the invoice number, the amount in dispute, and the reason for the request.\n\nRefund processing time: Approved refunds are returned to the original payment method within 5-10 business days. You will receive an email confirmation when the refund is initiated.\n\nNote: Refund requests that require manager approval (amounts over $500 or disputes involving multiple invoices) are escalated to our billing team and may take up to 5 business days to review.",
+  "last_updated": "2026-05-08",
+  "applies_to": [
+    "Free",
+    "Pro",
+    "Enterprise"
+  ]
+}

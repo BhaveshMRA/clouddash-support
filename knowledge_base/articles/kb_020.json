@@ -1,0 +1,18 @@
+{
+  "id": "KB-020",
+  "title": "Using CloudDash Audit Logs",
+  "category": "account",
+  "tags": [
+    "audit logs",
+    "compliance",
+    "security",
+    "activity",
+    "history"
+  ],
+  "content": "CloudDash Audit Logs provide a complete record of actions taken within your organization, including user logins, configuration changes, and administrative actions. Audit logs are available on Pro and Enterprise plans.\n\nAccessing audit logs:\n1. Go to Settings > Audit Logs\n2. Use the filters to narrow by date range, user, action type, or resource\n3. Click any log entry to see full details\n\nWhat is logged:\nAuthentication events: User logins (successful and failed), SSO authentication events, API key usage, session timeouts\n\nTeam management: User invitations sent, users added or removed, role changes, ownership transfers\n\nIntegration changes: Cloud integrations added, modified, or deleted, credential updates, integration enable/disable actions\n\nAlert changes: Alert rules created, modified, deleted, or muted\n\nBilling events: Plan changes, payment method updates, invoice generation\n\nDashboard changes: Dashboards created, modified, shared, or deleted\n\nAudit log retention:\n- Pro plan: 90 days of audit log history\n- Enterprise plan: 1 year of audit log history (extended retention available)\n\nExporting audit logs:\nAudit logs can be exported as CSV or JSON for compliance purposes:\n1. Go to Settings > Audit Logs\n2. Apply any filters for the export scope\n3. Click Export > Choose format (CSV or JSON)\n4. The export is emailed to your account email address\n\nStreaming audit logs (Enterprise): Enterprise customers can stream audit logs in real time to their SIEM or log management system via webhook or syslog. Go to Settings > Audit Logs > Streaming to configure.\n\nCompliance use cases: CloudDash audit logs support SOC 2 Type II compliance, ISO 27001 audits, and internal security reviews. Each log entry includes a timestamp, user identity, IP address, action performed, and the specific resource affected.",
+  "last_updated": "2026-05-07",
+  "applies_to": [
+    "Pro",
+    "Enterprise"
+  ]
+}

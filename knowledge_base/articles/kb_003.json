@@ -1,0 +1,19 @@
+{
+  "id": "KB-003",
+  "title": "How to Invite Team Members to CloudDash",
+  "category": "faq",
+  "tags": [
+    "team",
+    "invite",
+    "users",
+    "collaboration",
+    "access"
+  ],
+  "content": "CloudDash supports multi-user access with role-based permissions. You can invite team members to your organization and assign them appropriate roles.\n\nHow to invite a team member:\n1. Navigate to Settings > Team Management\n2. Click Invite Member\n3. Enter the team member's email address\n4. Select their role: Viewer, Editor, or Admin (see role descriptions below)\n5. Optionally restrict access to specific dashboards or cloud accounts\n6. Click Send Invitation\n\nThe invited user will receive an email with a link to accept the invitation. The link expires after 72 hours. If it expires, you can resend the invitation from the Pending Invitations section.\n\nAvailable roles:\n- Viewer: Can view dashboards, alerts, and reports. Cannot make changes or access billing.\n- Editor: Can create and modify dashboards, configure alerts, and manage integrations. Cannot manage team members or billing.\n- Admin: Full access to all features including team management, billing, and organization settings.\n\nSeat limits by plan:\n- Free plan: Up to 2 team members\n- Pro plan: Up to 10 team members\n- Enterprise plan: Unlimited team members\n\nIf you need to remove a team member, go to Settings > Team Management, find the user, and click Remove. Their access is revoked immediately. On Enterprise plans, you can also temporarily deactivate a user without removing them.",
+  "last_updated": "2026-04-20",
+  "applies_to": [
+    "Free",
+    "Pro",
+    "Enterprise"
+  ]
+}

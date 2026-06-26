@@ -1,0 +1,21 @@
+{
+  "id": "KB-007",
+  "title": "AWS CloudWatch Integration Failing",
+  "category": "troubleshooting",
+  "tags": [
+    "AWS",
+    "CloudWatch",
+    "integration",
+    "failing",
+    "error",
+    "IAM",
+    "permissions"
+  ],
+  "content": "If your AWS CloudWatch integration is failing or showing an error in CloudDash, follow this diagnostic guide to identify and fix the issue.\n\nCommon error messages and their fixes:\n\nError: InvalidClientTokenId\nCause: The AWS access key ID is invalid or has been deactivated.\nFix: Go to Settings > Integrations > AWS > Edit, re-enter your access key ID and secret access key. Verify the key is active in your AWS IAM console under Security Credentials.\n\nError: AccessDenied / Access Denied\nCause: The IAM user or role used by CloudDash does not have the required permissions.\nFix: Attach the CloudDashReadOnly managed policy to your IAM user or role. The required permissions include: cloudwatch:GetMetricData, cloudwatch:ListMetrics, cloudwatch:DescribeAlarms, ec2:DescribeInstances, ce:GetCostAndUsage, and tag:GetResources. For a complete policy document, see the CloudDash AWS Setup Guide.\n\nError: AuthFailure\nCause: The AWS secret access key is incorrect.\nFix: Regenerate your AWS access key pair in the IAM console and update both the key ID and secret in CloudDash Settings > Integrations > AWS > Edit.\n\nError: RequestExpired / Token expired\nCause: Clock skew between CloudDash servers and AWS. This is rare but can occur.\nFix: This is resolved automatically. If it persists for more than 1 hour, contact support.\n\nError: Integration shows as Connected but no metrics appear\nCause: Metrics can take up to 15 minutes to appear after a new integration is connected. If metrics still do not appear after 15 minutes, verify that your AWS resources are tagged correctly and that CloudWatch is enabled for the services you want to monitor.\n\nVerifying the integration is working:\n1. Go to Settings > Integrations > AWS\n2. Click the Health tab\n3. Look for successful metric pulls in the last hour (shown as green entries)\n4. Click on any red (failed) entries to see the specific error message\n\nUsing IAM roles instead of access keys (recommended):\nFor better security, use cross-account IAM roles instead of access key pairs. This eliminates the need to rotate keys and reduces the risk of credential exposure. See KB-013 for setup instructions.",
+  "last_updated": "2026-05-15",
+  "applies_to": [
+    "Free",
+    "Pro",
+    "Enterprise"
+  ]
+}

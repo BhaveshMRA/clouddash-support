@@ -1,0 +1,19 @@
+{
+  "id": "KB-014",
+  "title": "CloudDash API Rate Limits",
+  "category": "api",
+  "tags": [
+    "API",
+    "rate limits",
+    "throttling",
+    "429",
+    "quota"
+  ],
+  "content": "CloudDash API rate limits are applied per API key to ensure fair usage and platform stability. Understanding these limits helps you design integrations that stay within bounds.\n\nRate limits by plan:\n\nFree plan: 1,000 API requests per day, maximum 10 requests per minute\nPro plan: 10,000 API requests per day, maximum 60 requests per minute\nEnterprise plan: Custom limits (default 100,000/day, 300/minute) \u2014 contact your account manager to adjust\n\nRate limit headers: Every API response includes headers showing your current usage:\n- X-RateLimit-Limit: Your total daily request allowance\n- X-RateLimit-Remaining: Requests remaining in the current day\n- X-RateLimit-Reset: Unix timestamp when the daily limit resets (midnight UTC)\n- X-RateLimit-Minute-Limit: Requests allowed per minute\n- X-RateLimit-Minute-Remaining: Requests remaining in the current minute\n\nWhen you exceed the rate limit, the API returns HTTP 429 Too Many Requests with a Retry-After header indicating how many seconds to wait before retrying.\n\nHandling rate limits in your code:\n- Check the X-RateLimit-Remaining header and slow down requests as it approaches zero\n- Implement exponential backoff when you receive a 429 response\n- Cache responses where possible to reduce redundant API calls\n- Use bulk endpoints (e.g., /v2/metrics/batch) instead of multiple single-metric calls\n\nExemptions: Webhook event deliveries do not count against your API rate limit. Metric data ingestion via the CloudDash agent also does not count against the REST API limit.\n\nIf you consistently need higher limits, contact sales@clouddash.io to discuss Enterprise plan options with custom rate limits.",
+  "last_updated": "2026-04-15",
+  "applies_to": [
+    "Free",
+    "Pro",
+    "Enterprise"
+  ]
+}

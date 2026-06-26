@@ -1,0 +1,19 @@
+{
+  "id": "KB-006",
+  "title": "Dashboard Loading Slowly or Not Loading",
+  "category": "troubleshooting",
+  "tags": [
+    "dashboard",
+    "slow",
+    "loading",
+    "performance",
+    "timeout"
+  ],
+  "content": "If your CloudDash dashboard is loading slowly or failing to load, this is usually caused by one of three things: too many widgets with long time ranges, browser cache issues, or a temporary service degradation.\n\nQuick fix \u2014 try these first:\n1. Hard refresh your browser: Cmd+Shift+R (Mac) or Ctrl+Shift+R (Windows)\n2. Clear browser cache and cookies for app.clouddash.io\n3. Try an incognito/private browser window\n4. Check status.clouddash.io for any ongoing incidents\n\nIf the dashboard loads in incognito but not normally, clear your browser cache completely and try again.\n\nReducing dashboard load time:\nDashboards with many widgets querying long time ranges (30+ days) can be slow because each widget makes a separate API call. To improve performance:\n- Reduce the default time range to 24 hours or 7 days\n- Use the Dashboard Settings to enable lazy loading (widgets load as you scroll)\n- Split large dashboards into multiple focused dashboards\n- Use summary widgets instead of raw metric graphs where possible\n- Enable dashboard caching under Dashboard Settings > Performance > Cache Results (refreshes every 5 minutes)\n\nWidget-specific timeouts: If only some widgets fail to load and show a timeout error, the underlying metric query is taking too long. Click the widget's settings (gear icon) and either reduce the time range, add metric filters to narrow the data set, or switch from raw data to aggregated data (hourly or daily averages).\n\nBrowser compatibility: CloudDash supports Chrome 90+, Firefox 88+, Safari 14+, and Edge 90+. Older browsers may experience performance issues. Internet Explorer is not supported.\n\nIf none of the above resolves the issue, export your dashboard configuration (Dashboard Settings > Export) and contact support with the export file and a description of which widgets are failing.",
+  "last_updated": "2026-04-28",
+  "applies_to": [
+    "Free",
+    "Pro",
+    "Enterprise"
+  ]
+}

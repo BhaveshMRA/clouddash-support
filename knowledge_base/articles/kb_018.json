@@ -1,0 +1,19 @@
+{
+  "id": "KB-018",
+  "title": "Configuring Role-Based Access Control (RBAC) in CloudDash",
+  "category": "account",
+  "tags": [
+    "RBAC",
+    "roles",
+    "permissions",
+    "access control",
+    "team"
+  ],
+  "content": "CloudDash Role-Based Access Control (RBAC) allows you to define what each team member can see and do within your CloudDash organization. Standard roles are available on all plans; custom roles are available on Enterprise plans.\n\nStandard roles:\n\nViewer:\n- View all dashboards and reports\n- View alert rules and their status (cannot create or modify)\n- View integration status (cannot add or edit)\n- Cannot access billing or team settings\n\nEditor:\n- All Viewer permissions\n- Create, edit, and delete dashboards\n- Create, edit, and delete alert rules\n- Add and modify integrations\n- Cannot manage team members or billing\n\nAdmin:\n- All Editor permissions\n- Invite and remove team members\n- Change team member roles\n- Access and manage billing settings\n- Configure SSO and security settings\n- View audit logs\n\nAssigning roles:\n1. Go to Settings > Team Management\n2. Click the role dropdown next to a team member's name\n3. Select the new role\n4. The change takes effect immediately\n\nCustom roles (Enterprise only):\nEnterprise customers can create custom roles with granular permission sets. To create a custom role:\n1. Go to Settings > Team Management > Roles > Create Custom Role\n2. Give the role a name and description\n3. Select individual permissions from the permission matrix\n4. Click Save Role\n5. Assign the custom role to team members as needed\n\nResource-level access control (Enterprise only):\nOn Enterprise plans, you can restrict users to specific dashboards, cloud accounts, or alert groups, regardless of their role. This is useful for multi-team or multi-tenant setups where different teams should only see their own resources.\n\nTo configure resource-level access:\nGo to Settings > Team Management > [user] > Resource Access and select which resources the user can access.",
+  "last_updated": "2026-04-25",
+  "applies_to": [
+    "Free",
+    "Pro",
+    "Enterprise"
+  ]
+}

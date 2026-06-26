@@ -1,0 +1,20 @@
+{
+  "id": "KB-004",
+  "title": "CloudDash Plan Comparison: Free vs Pro vs Enterprise",
+  "category": "faq",
+  "tags": [
+    "plans",
+    "pricing",
+    "free",
+    "pro",
+    "enterprise",
+    "features"
+  ],
+  "content": "CloudDash offers three plans designed to meet the needs of teams at different stages of growth.\n\nFree Plan:\n- Up to 2 cloud accounts (AWS, GCP, or Azure)\n- Up to 2 team members\n- 10 active alert rules\n- 7-day metric history retention\n- Community support via forums\n- Basic dashboards and cost reports\n- 1-hour metric refresh interval\n\nPro Plan ($149/month or $1,490/year):\n- Up to 10 cloud accounts\n- Up to 10 team members\n- Unlimited alert rules\n- 90-day metric history retention\n- Email and chat support (business hours)\n- Advanced dashboards with custom widgets\n- 5-minute metric refresh interval\n- Anomaly detection and forecasting\n- Custom webhook integrations\n- API access with 10,000 requests/day\n\nEnterprise Plan (custom pricing):\n- Unlimited cloud accounts\n- Unlimited team members\n- Unlimited alert rules\n- 1-year+ metric history retention\n- 24/7 dedicated support with SLA\n- Custom dashboards with white-labeling\n- 1-minute metric refresh interval\n- Advanced anomaly detection with ML models\n- SSO/SAML integration\n- RBAC with custom roles\n- Audit logs and compliance exports\n- Custom API rate limits\n- Dedicated onboarding and customer success manager\n\nTo upgrade your plan, go to Settings > Billing > Change Plan. Upgrades take effect immediately and are prorated. Downgrades take effect at the end of your current billing cycle.",
+  "last_updated": "2026-05-10",
+  "applies_to": [
+    "Free",
+    "Pro",
+    "Enterprise"
+  ]
+}

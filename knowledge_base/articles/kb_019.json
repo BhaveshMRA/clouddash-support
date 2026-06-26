@@ -1,0 +1,19 @@
+{
+  "id": "KB-019",
+  "title": "Managing Teams and Organizations in CloudDash",
+  "category": "account",
+  "tags": [
+    "team",
+    "organization",
+    "management",
+    "workspace",
+    "admin"
+  ],
+  "content": "CloudDash organizes users into organizations. Each organization has its own dashboards, integrations, alerts, and billing. This guide covers how to manage your organization settings.\n\nOrganization settings:\nGo to Settings > Organization to manage:\n- Organization name and logo\n- Default timezone for dashboards and reports\n- Notification preferences (default channels for new alert rules)\n- Data retention settings (Pro and Enterprise)\n- API access policies\n\nManaging team members:\nSee KB-003 for inviting new team members. From Settings > Team Management you can:\n- View all current members and their roles\n- View pending invitations (resend or cancel them)\n- Change member roles\n- Remove members (their access is revoked immediately)\n- Export a CSV of all team members and their roles\n\nTransferring organization ownership:\nIf the current owner needs to leave the organization:\n1. Go to Settings > Team Management\n2. Click Transfer Ownership next to another Admin's name\n3. Confirm the transfer\nThe new owner has full administrative control. The previous owner becomes an Admin. Ownership transfers are logged in the audit trail.\n\nMultiple organizations:\nA single CloudDash user account can belong to multiple organizations. To switch between organizations, click the organization name in the top-left corner of the dashboard and select another organization from the dropdown.\n\nTo create a new organization under your account, click Create New Organization from the organization switcher. Each organization has its own subscription and billing.\n\nDeleting an organization:\nOrganization deletion is permanent and removes all dashboards, alerts, integrations, and historical data. To delete:\n1. Go to Settings > Organization > Danger Zone\n2. Click Delete Organization\n3. Type the organization name to confirm\n4. Click Delete Permanently\nThis action cannot be undone. Export any data you need before deleting.",
+  "last_updated": "2026-05-03",
+  "applies_to": [
+    "Free",
+    "Pro",
+    "Enterprise"
+  ]
+}

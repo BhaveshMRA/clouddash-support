@@ -1,0 +1,19 @@
+{
+  "id": "KB-016",
+  "title": "CloudDash SDK Quickstart Guide",
+  "category": "api",
+  "tags": [
+    "SDK",
+    "Python",
+    "JavaScript",
+    "quickstart",
+    "client library"
+  ],
+  "content": "CloudDash provides official client SDKs for Python and JavaScript (Node.js) to simplify API integration. This guide covers installation and basic usage for both.\n\nPython SDK:\n\nInstallation:\npip install clouddash-sdk\n\nBasic usage:\nfrom clouddash import CloudDashClient\n\nclient = CloudDashClient(api_key=\"YOUR_API_KEY\")\n\n# List all dashboards\ndashboards = client.dashboards.list()\n\n# Get metrics for a specific resource\nmetrics = client.metrics.get(\n    resource_id=\"ec2:i-0abc123def456\",\n    metric=\"cpu_utilization\",\n    start_time=\"2026-05-01T00:00:00Z\",\n    end_time=\"2026-05-02T00:00:00Z\",\n    interval=\"1h\"\n)\n\n# Create an alert rule\nalert = client.alerts.create(\n    name=\"High CPU Alert\",\n    metric=\"cpu_utilization\",\n    threshold=90,\n    condition=\"greater_than\",\n    severity=\"critical\",\n    notification_channels=[\"email\", \"webhook\"]\n)\n\nJavaScript SDK:\n\nInstallation:\nnpm install @clouddash/sdk\n\nBasic usage:\nconst { CloudDashClient } = require('@clouddash/sdk');\nconst client = new CloudDashClient({ apiKey: 'YOUR_API_KEY' });\n\nconst dashboards = await client.dashboards.list();\nconst metrics = await client.metrics.get({ resourceId: 'ec2:i-0abc123', metric: 'cpu_utilization' });\n\nError handling: The SDK raises CloudDashAPIError for API errors, CloudDashRateLimitError for rate limit errors (includes retryAfter property), and CloudDashAuthError for authentication failures.\n\nSDK documentation: Full API reference and examples are available at docs.clouddash.io/sdk. The SDK source code is open source at github.com/clouddash/sdk-python and github.com/clouddash/sdk-js.",
+  "last_updated": "2026-04-10",
+  "applies_to": [
+    "Free",
+    "Pro",
+    "Enterprise"
+  ]
+}

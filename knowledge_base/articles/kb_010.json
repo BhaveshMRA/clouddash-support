@@ -1,0 +1,20 @@
+{
+  "id": "KB-010",
+  "title": "How to Upgrade or Downgrade Your CloudDash Plan",
+  "category": "billing",
+  "tags": [
+    "upgrade",
+    "downgrade",
+    "plan change",
+    "pro",
+    "enterprise",
+    "billing"
+  ],
+  "content": "You can change your CloudDash plan at any time from the billing settings. This guide covers how upgrades and downgrades work and how they are billed.\n\nUpgrading your plan (Free to Pro, or Pro to Enterprise):\n\nTo upgrade:\n1. Go to Settings > Billing > Change Plan\n2. Select the new plan\n3. Enter or confirm your payment method\n4. Click Confirm Upgrade\n\nUpgrades take effect immediately. You gain access to all new plan features right away. Billing is prorated \u2014 you are charged only for the remaining days in the current billing cycle at the new plan's rate, minus any credit from the remaining days on your current plan.\n\nExample: If you upgrade from Free to Pro ($149/month) on day 15 of a 30-day billing cycle, you are charged approximately $74.50 for the remaining 15 days.\n\nDowngrading your plan (Pro to Free, or Enterprise to Pro):\n\nTo downgrade:\n1. Go to Settings > Billing > Change Plan\n2. Select the lower plan\n3. Review the features you will lose access to\n4. Click Confirm Downgrade\n\nDowngrades take effect at the end of your current billing cycle. You retain access to current plan features until that date. No refund is issued for the remaining days on your current plan.\n\nImportant: Before downgrading, review your current usage. If you have more cloud accounts, team members, or alert rules than the lower plan allows, you must reduce them before the downgrade takes effect. CloudDash will send reminder emails 7 days and 1 day before the downgrade date listing any items that need to be removed.\n\nAnnual plan changes: If you are on an annual plan and want to upgrade mid-year, you receive a prorated credit for the remaining months of your annual plan applied to the new plan's annual fee. Contact sales@clouddash.io for annual plan changes.",
+  "last_updated": "2026-05-10",
+  "applies_to": [
+    "Free",
+    "Pro",
+    "Enterprise"
+  ]
+}

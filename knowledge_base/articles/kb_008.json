@@ -1,0 +1,18 @@
+{
+  "id": "KB-008",
+  "title": "Webhooks Not Receiving Alert Events",
+  "category": "troubleshooting",
+  "tags": [
+    "webhook",
+    "alerts",
+    "notifications",
+    "not receiving",
+    "endpoint"
+  ],
+  "content": "If your webhook endpoint is not receiving alert notifications from CloudDash, follow these steps to diagnose the issue.\n\nStep 1 \u2014 Verify webhook configuration:\n1. Go to Settings > Integrations > Webhooks\n2. Confirm the webhook URL is correct and publicly accessible\n3. Ensure the endpoint uses HTTPS (HTTP webhooks are not supported for security reasons)\n4. Check that the selected events include the alert types you expect to receive\n\nStep 2 \u2014 Test the webhook:\nCloudDash provides a webhook test tool. Go to Settings > Integrations > Webhooks > [your webhook] > Send Test Event. This sends a sample payload to your endpoint. Check your endpoint logs to confirm receipt.\n\nStep 3 \u2014 Check webhook delivery logs:\nGo to Settings > Integrations > Webhooks > [your webhook] > Delivery Log. This shows all webhook delivery attempts, their HTTP status codes, and response bodies. Common issues:\n- 404: Your endpoint URL has changed or is incorrect\n- 401/403: Your endpoint requires authentication that CloudDash is not providing\n- 500: Your endpoint is erroring when processing the payload\n- Timeout: Your endpoint took more than 10 seconds to respond\n\nStep 4 \u2014 Check firewall and IP allowlisting:\nIf your endpoint is behind a firewall, you must allowlist CloudDash's outbound IP ranges. Current CloudDash webhook source IPs are: 34.102.134.0/24 and 35.186.192.0/24. These IPs are published at docs.clouddash.io/webhook-ips and updated with 30 days notice.\n\nStep 5 \u2014 Webhook retry behavior:\nCloudDash retries failed webhook deliveries up to 3 times with exponential backoff (5 min, 30 min, 2 hours). If all 3 retries fail, the event is marked as undelivered and no further attempts are made. You can manually retry undelivered events from the Delivery Log.\n\nPayload format: CloudDash webhook payloads are JSON. See KB-015 for the full payload schema and example events.",
+  "last_updated": "2026-04-22",
+  "applies_to": [
+    "Pro",
+    "Enterprise"
+  ]
+}

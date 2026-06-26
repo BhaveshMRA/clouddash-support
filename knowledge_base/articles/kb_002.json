@@ -1,0 +1,18 @@
+{
+  "id": "KB-002",
+  "title": "How to Reset Your CloudDash API Key",
+  "category": "faq",
+  "tags": [
+    "API key",
+    "reset",
+    "authentication",
+    "security"
+  ],
+  "content": "Your CloudDash API key is used to authenticate programmatic access to the CloudDash REST API. If your key is compromised or you need to rotate it for security purposes, you can reset it at any time.\n\nSteps to reset your API key:\n1. Log in to your CloudDash dashboard at app.clouddash.io\n2. Click your profile avatar in the top-right corner\n3. Select Account Settings from the dropdown menu\n4. Navigate to the API Keys tab\n5. Click Regenerate Key next to the key you want to reset\n6. Confirm the action when prompted \u2014 this immediately invalidates the old key\n7. Copy the new key and store it securely \u2014 it will not be shown again\n\nImportant: Resetting your API key immediately invalidates the previous key. Any applications, scripts, or integrations using the old key will stop working until they are updated with the new key. Plan your key rotation accordingly.\n\nSecurity best practices:\n- Never commit API keys to version control\n- Use environment variables to store keys in your applications\n- Set up separate API keys for development and production environments\n- Review API key usage logs under Account Settings > API Keys > Usage Log\n- Enable IP allowlisting on Enterprise plans to restrict which IPs can use your key\n\nIf you believe your API key was compromised, reset it immediately and review your audit logs for unauthorized access under Settings > Audit Logs.",
+  "last_updated": "2026-05-01",
+  "applies_to": [
+    "Free",
+    "Pro",
+    "Enterprise"
+  ]
+}

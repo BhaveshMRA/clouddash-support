@@ -1,0 +1,18 @@
+{
+  "id": "KB-015",
+  "title": "Configuring Webhooks in CloudDash",
+  "category": "api",
+  "tags": [
+    "webhook",
+    "configuration",
+    "payload",
+    "events",
+    "notifications"
+  ],
+  "content": "CloudDash webhooks allow you to receive real-time HTTP notifications when events occur in your account, such as alerts firing, integrations failing, or team members being added.\n\nSetting up a webhook:\n1. Go to Settings > Integrations > Webhooks\n2. Click Add Webhook\n3. Enter your endpoint URL (must be HTTPS)\n4. Select the events you want to receive (see event types below)\n5. Optionally add a secret for payload signature verification\n6. Click Save and Test\n\nEvent types available:\n- alert.triggered: An alert rule threshold was crossed\n- alert.resolved: An alert has returned to normal\n- integration.failed: A cloud integration stopped collecting metrics\n- integration.recovered: A failed integration is collecting metrics again\n- billing.payment_failed: A payment attempt failed\n- billing.invoice_created: A new invoice is available\n- team.member_added: A new user joined your organization\n- team.member_removed: A user was removed from your organization\n\nWebhook payload format:\n{\n  \"event\": \"alert.triggered\",\n  \"timestamp\": \"2026-05-15T14:23:00Z\",\n  \"account_id\": \"acc_123456\",\n  \"data\": {\n    \"alert_id\": \"alrt_789\",\n    \"alert_name\": \"High CPU on prod-server-1\",\n    \"severity\": \"critical\",\n    \"metric\": \"cpu_utilization\",\n    \"current_value\": 94.2,\n    \"threshold\": 90.0,\n    \"resource\": \"ec2:i-0abc123def456\"\n  }\n}\n\nVerifying webhook signatures: If you configured a webhook secret, CloudDash signs each payload using HMAC-SHA256. The signature is included in the X-CloudDash-Signature header. Verify it in your endpoint to ensure the request is genuine.\n\nRetry behavior: Failed webhook deliveries are retried up to 3 times with exponential backoff. See KB-008 for full retry behavior and troubleshooting.",
+  "last_updated": "2026-05-05",
+  "applies_to": [
+    "Pro",
+    "Enterprise"
+  ]
+}

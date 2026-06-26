@@ -1,0 +1,19 @@
+{
+  "id": "KB-005",
+  "title": "Alerts Not Firing After Updating Cloud Integration Credentials",
+  "category": "troubleshooting",
+  "tags": [
+    "alerts",
+    "not firing",
+    "credentials",
+    "AWS",
+    "integration",
+    "broken"
+  ],
+  "content": "If your CloudDash alerts stopped firing after updating your cloud provider credentials (AWS access keys, GCP service account, or Azure service principal), follow these steps to diagnose and resolve the issue.\n\nWhy this happens: CloudDash caches integration credentials for performance. When you update credentials in your cloud provider console but do not update them in CloudDash, the old (now invalid) credentials continue to be used until the cache expires or you manually refresh them. Additionally, if the new credentials have different IAM permissions, metric collection may partially or fully fail.\n\nStep 1 \u2014 Update credentials in CloudDash:\n1. Go to Settings > Integrations\n2. Find the affected integration and click Edit\n3. Enter your new credentials (access key, service account JSON, or service principal details)\n4. Click Verify Connection \u2014 wait for the green checkmark\n5. Click Save\n\nStep 2 \u2014 Force a credential refresh:\nAfter saving, click the Sync Now button on the integration card. This forces CloudDash to immediately use the new credentials and attempt metric collection.\n\nStep 3 \u2014 Check IAM permissions:\nThe new credentials must have the same or greater permissions as the previous ones. For AWS, the minimum required policy is the CloudDashReadOnly managed policy (ARN: arn:aws:iam::aws:policy/CloudDashReadOnly). Missing permissions will cause specific metrics to fail silently.\n\nStep 4 \u2014 Verify alert configuration:\nGo to Alerts > Alert Rules and check that your alert rules are still in Active status. Credential errors can sometimes cause alert rules to enter a Suspended state. Click Resume on any suspended alerts.\n\nStep 5 \u2014 Check the integration health dashboard:\nGo to Settings > Integrations > [your integration] > Health. This shows a 24-hour log of metric collection attempts, including any errors. Common errors include InvalidClientTokenId (wrong access key), AccessDenied (insufficient permissions), and TokenExpired (rotated credentials not updated).\n\nIf alerts still do not fire after completing these steps, contact support with your integration health log and we will investigate further.",
+  "last_updated": "2026-05-12",
+  "applies_to": [
+    "Pro",
+    "Enterprise"
+  ]
+}

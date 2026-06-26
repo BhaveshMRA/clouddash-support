@@ -1,0 +1,19 @@
+{
+  "id": "KB-013",
+  "title": "CloudDash API Authentication and API Keys",
+  "category": "api",
+  "tags": [
+    "API",
+    "authentication",
+    "API key",
+    "bearer token",
+    "REST"
+  ],
+  "content": "The CloudDash REST API uses API key authentication. All API requests must include your API key in the Authorization header as a Bearer token.\n\nBase URL: https://api.clouddash.io/v2\n\nAuthentication header format:\nAuthorization: Bearer YOUR_API_KEY\n\nExample request using curl:\ncurl -X GET \"https://api.clouddash.io/v2/dashboards\"   -H \"Authorization: Bearer YOUR_API_KEY\"   -H \"Content-Type: application/json\"\n\nGenerating an API key:\n1. Log in to your CloudDash dashboard\n2. Go to Account Settings > API Keys\n3. Click Generate New Key\n4. Give the key a descriptive name (e.g., \"Production Monitoring Script\")\n5. Click Generate \u2014 copy the key immediately, it is not shown again\n\nAPI key scopes: By default, API keys have read and write access to all resources in your account. On Enterprise plans, you can create scoped API keys with read-only access or restricted to specific resource types (dashboards, alerts, integrations).\n\nSecurity best practices:\n- Store API keys in environment variables, never in source code\n- Use separate keys for different applications and environments\n- Rotate keys every 90 days as a security best practice\n- Delete unused keys from Account Settings > API Keys\n\nAPI versioning: The current stable version is v2. The v1 API is deprecated and will be removed on December 31, 2026. Migrate to v2 before that date. See the migration guide at docs.clouddash.io/api/v1-to-v2.\n\nTesting your API key:\ncurl -X GET \"https://api.clouddash.io/v2/me\"   -H \"Authorization: Bearer YOUR_API_KEY\"\n\nA successful response returns your account details in JSON format. A 401 Unauthorized response means the key is invalid or expired.",
+  "last_updated": "2026-05-01",
+  "applies_to": [
+    "Free",
+    "Pro",
+    "Enterprise"
+  ]
+}
