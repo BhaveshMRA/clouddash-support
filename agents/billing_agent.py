@@ -10,7 +10,7 @@ from langchain_core.messages import HumanMessage, SystemMessage
 
 from agents.base import BaseAgent
 from agents.state import AgentRole, Message, Sentiment, SupportState
-from retrieval.retriever import format_citations, format_context, retrieve
+from retrieval.retriever import format_citations, format_context, format_context_full, retrieve
 
 # Escalation triggers — if any keyword found, escalate regardless of amount
 ESCALATION_KEYWORDS = [
@@ -106,7 +106,7 @@ class BillingAgent(BaseAgent):
                 category_filter = "billing",
             )
 
-            kb_context = format_context(chunks)
+            kb_context = format_context_full(chunks)
             citations  = format_citations(chunks)
 
             # Build context block

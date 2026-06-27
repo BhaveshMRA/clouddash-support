@@ -231,3 +231,28 @@ def format_citations(chunks: list[RetrievedChunk]) -> str:
         if c.kb_id not in seen:
             seen[c.kb_id] = c.title
     return "Sources: " + " | ".join(f"[{k}] {v}" for k, v in seen.items())
+
+
+def format_context_full(chunks: list[RetrievedChunk]) -> str:
+    """
+    Like format_context but shows ALL chunks per KB article,
+    grouped together. This gives the agent the complete article
+    content rather than just the first matching chunk.
+
+    Use this in agent prompts instead of format_context.
+    """
+    if not chunks:
+        return "No relevant knowledge base articles found."
+
+    # Group chunks by KB ID preserving order
+    grouped: dict[str, list[RetrievedChunk]] = {}
+    for chunk in chunks:
+        grouped.setdefault(chunk.kb_id, []).append(chunk)
+
+    sections = []
+    for kb_id, kb_chunks in grouped.items():
+        title   = kb_chunks[0].title
+        content = "\n\n".join(c.content for c in kb_chunks)
+        sections.append(f"[{kb_id}] {title}\n---\n{content}")
+
+    return "\n\n".join(sections)

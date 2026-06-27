@@ -1,5 +1,5 @@
 from __future__ import annotations
-from datetime import datetime
+from datetime import datetime, timezone
 from enum import Enum
 from operator import add
 from typing import Annotated, Optional, TypedDict
@@ -35,7 +35,7 @@ class Message(BaseModel):
     role: str
     content: str
     agent: Optional[AgentRole] = None
-    timestamp: str = Field(default_factory=lambda: datetime.utcnow().isoformat())
+    timestamp: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
 
 class ExtractedEntities(BaseModel):
     customer_id: Optional[str]    = None
@@ -53,7 +53,7 @@ class RetrievedChunk(BaseModel):
     category: str
 
 class HandoverEvent(BaseModel):
-    timestamp: str = Field(default_factory=lambda: datetime.utcnow().isoformat())
+    timestamp: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
     source_agent: AgentRole
     target_agent: AgentRole
     reason: str
@@ -69,7 +69,7 @@ class HumanEscalationPayload(BaseModel):
     conversation_summary: str
     recommended_action: str
     full_history_ref: str
-    timestamp: str = Field(default_factory=lambda: datetime.utcnow().isoformat())
+    timestamp: str = Field(default_factory=lambda: datetime.now(timezone.utc).isoformat())
 
 class SupportState(TypedDict):
     trace_id:             str

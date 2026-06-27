@@ -10,7 +10,7 @@ from langchain_core.messages import HumanMessage, SystemMessage
 
 from agents.base import BaseAgent
 from agents.state import AgentRole, Message, SupportState
-from retrieval.retriever import format_citations, format_context, retrieve
+from retrieval.retriever import format_citations, format_context, format_context_full, retrieve
 
 
 class TechnicalSupportAgent(BaseAgent):
@@ -50,11 +50,13 @@ class TechnicalSupportAgent(BaseAgent):
             )
 
             # Format KB context for the prompt
-            kb_context = format_context(chunks)
+            kb_context = format_context_full(chunks)
             citations  = format_citations(chunks)
 
             # Build the full prompt
-            user_prompt = f"""Customer issue: {latest_query}
+            user_prompt = f"""IMPORTANT: Only use the information in the Knowledge Base Context below. Do not use any outside knowledge. If the KB context does not contain the answer, say you do not have that information.
+
+Customer issue: {latest_query}
 
 Knowledge Base Context:
 {kb_context}
