@@ -1,27 +1,17 @@
-# AI framework
 langgraph
 langchain
 langchain-core
-langchain-google-genai
+langchain-ollama
 langchain-community
-
-# API
+langchain-text-splitters
 fastapi
 uvicorn[standard]
 pydantic
-
-# Vector store + embeddings
 chromadb
 sentence-transformers
-
-# Config + env
 pyyaml
 python-dotenv
-
-# Logging
 structlog
-
-# Testing
 pytest
 pytest-asyncio
 httpx
