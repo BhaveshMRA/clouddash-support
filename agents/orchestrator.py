@@ -136,7 +136,7 @@ def route_from_triage(state: SupportState) -> str:
         "technical":  "technical",
         "billing":    "billing",
         "escalation": "escalation",
-        "triage":     "triage",
+        "triage":     "escalation",  # unknown intent → escalate, never loop
         "end":        END,
     }
     return route_map.get(decision, "triage")
@@ -187,7 +187,7 @@ def build_graph() -> StateGraph:
             "technical":  "technical",
             "billing":    "billing",
             "escalation": "escalation",
-            "triage":     "triage",
+            "triage":     "escalation",  # unknown intent → escalate, never loop
             END:          END,
         },
     )
@@ -266,5 +266,5 @@ def run_conversation_turn(
         "retrieved_chunks":     [],
     }
 
-    result = support_graph.invoke(updated_state)
+    result = support_graph.invoke(updated_state, config={"recursion_limit": 25})
     return result
